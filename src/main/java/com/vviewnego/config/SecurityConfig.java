@@ -27,15 +27,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-
-    /*
-    //등록 후 실행하면 로그인 창을 찾지 못하므로 view(jsp나 Thymeleaf)를 작성한 후 formLogin() 메소드로 반드시 로그인 창을 지정하여 설정하여야 한다.
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.build();
-    }
-    */
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         //csrf 비활성화

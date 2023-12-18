@@ -2,20 +2,18 @@ package com.vviewnego.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardDTO {
 
-    private Integer bno;
+    private Long bno;
 
     @NotEmpty
     @Size(max = 200)
@@ -26,10 +24,22 @@ public class BoardDTO {
     private String content;
 
     @NotEmpty
+    @Size(max=50)
+    private String boardType;
+
+    @NotEmpty
     @Size(max = 50)
     private String writer;
 
     private LocalDateTime regDate;
 
     private LocalDateTime modDate;
+
+    public Long getBno() {
+        return bno;
+    }
+
+    public void setBno(Long bno) {
+        this.bno = bno;
+    }
 }
